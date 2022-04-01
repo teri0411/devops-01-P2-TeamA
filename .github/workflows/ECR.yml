@@ -34,11 +34,23 @@ jobs:
         
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+<<<<<<< HEAD
           ECR_REPOSITORY: p2-teama
           IMAGE_TAG: latest   
+=======
+          ECR_REPOSITORY: team-a
+          IMAGE_TAG: good   
+>>>>>>> f26edf071e8db2d368c5d3cb09108eff20120af6
           
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
           
+<<<<<<< HEAD
+=======
+     
+          
+
+
+>>>>>>> f26edf071e8db2d368c5d3cb09108eff20120af6
