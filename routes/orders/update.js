@@ -3,8 +3,8 @@
 const { updateoneproduct } = require('../../model')
 
 module.exports = async function (fastify, opts) {
-  fastify.put('/:id', async function (request, reply) {
-    const result = await updateoneproduct(this.mongo,request.params.id,request.body)
+  fastify.patch('/:id', async function (request, reply) {
+    const result = await updateone(this.mongo,request.params.id,request.body)
 
 
     if(result === []){

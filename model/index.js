@@ -6,7 +6,8 @@ module.exports = {
     const result = await collection.find({}).toArray()
     return result
   },
-  updateoneproduct: async (mongo, id, body) => {
+
+  updateone: async (mongo, id, body) => {
     const collection = mongo.db.collection("order")
     const result = await collection.findOneAndUpdate({
      _id: ObjectId(id)
