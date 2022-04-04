@@ -1,9 +1,9 @@
 'use strict'
 
-const { updateoneproduct } = require('../../model')
+const { updateone } = require('../../model')
 
 module.exports = async function (fastify, opts) {
-  fastify.patch('/:id', async function (request, reply) {
+  fastify.patch('/:id/status', async function (request, reply) {
     const result = await updateone(this.mongo,request.params.id,request.body)
 
 
