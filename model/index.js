@@ -7,7 +7,19 @@ module.exports = {
     return result
   },
 
-   PatchOne: async (mongo, id, body) => {
+
+  updateOne: async (mongo, id, body) => {
+    const collection = mongo.db.collection('order')
+
+    const result = await collection.findOneAndUpdate({
+      _id: ObjectId(id)
+    }, {
+      $set: body
+    })
+    return result
+  },
+
+   patchOne: async (mongo, id, body) => {
     const collection = mongo.db.collection('order')
 
     const result = await collection.findOneAndUpdate({

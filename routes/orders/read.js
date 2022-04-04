@@ -1,6 +1,6 @@
 'use strict'
 
-const { readAll } = require('../../model')
+const { readAll , readOne} = require('../../model')
 
 module.exports = async function (fastify, opts) { 
   fastify.get('/', async function (request, reply) { //클라이언트에서 받아오는 요청 : request, DB에서 받아오는 응답 : reply
