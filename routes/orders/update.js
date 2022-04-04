@@ -4,7 +4,7 @@ const { updateone } = require('../../model')
 
 module.exports = async function (fastify, opts) {
   fastify.patch('/:id/status', async function (request, reply) {
-    const result = await updateone(this.mongo,request.params.id,request.body)
+    const result = await updateone(this.mongo, request.params.id, request.body)
 
 
     if(result === []){

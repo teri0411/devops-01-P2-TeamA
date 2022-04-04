@@ -1,21 +1,22 @@
 'use strict'
+
 const { readall } = require('../../model')
 
-module.exports = async function (fastify, opts) {
-    fastify.get('/', async function (request, reply) {
-        const result = await readall(this.mongo);
-        
-        if(result === []){
+module.exports = async function (app, opts) {
+    app.get('/', async function (request, reply) {
+
+        const result = await readall(this.mongo)
+        if(result===[]){
             reply
-              .code(404)
-              .header('Content-Type','application/json')
+            .code(404)
+            .header('Content-type','application/json; charset=utf-8')
+            .send({error:"Not Found"})
         }
         else{
-           reply
+            reply
             .code(200)
-            .header('Content-Type','application/json')
+            .header('Content-type','application/json; charset=utf-8')
             .send(result)
-            }
-
-    })
+        }
+})
 }
