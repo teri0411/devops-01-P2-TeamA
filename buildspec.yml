@@ -3,12 +3,12 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs:16
+      - nodejs:16
     commands:
       - echo node version check
       - node -v
       - npm -v
-      
+
   pre_build:
     commands:
       - npm install -g create-react-app
