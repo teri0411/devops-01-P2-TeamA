@@ -34,8 +34,8 @@ jobs:
         
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: team-a
-          IMAGE_TAG: good   
+          ECR_REPOSITORY: jaehyeok
+          IMAGE_TAG: latest   
           
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
