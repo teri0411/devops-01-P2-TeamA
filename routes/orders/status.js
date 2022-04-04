@@ -10,7 +10,7 @@ module.exports = async function (fastify, opts) {
         reply
         .code(201)
         .header('Content-Type', 'application/json; charset=utf-8')
-        .send({"_id": result.value._id, "orderedMenu": result.value.orderedMenu, "deliveryInfo": result.value.deliveryInfo})
+        .send({"_id": result.value._id, "orderedMenu": result.value.orderedMenu, "deliveryInfo": result.value.deliveryInfo, "restaurant":result.value.restaurant})
 
 
     })    
