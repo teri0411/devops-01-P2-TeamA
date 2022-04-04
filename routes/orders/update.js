@@ -1,22 +1,13 @@
 'use strict'
-
-const { updateone } = require('../../model')
+const { updateOne } = require('../../model')
 
 module.exports = async function (fastify, opts) {
-  fastify.patch('/:id/status', async function (request, reply) {
-    const result = await updateone(this.mongo,request.params.id,request.body)
-
-
-    if(result === []){
-      reply
-        .code(404)
-        .header('Content-Type','application/json')
-        .send("error : Not Found")
-    }else{
-    reply
-      .code(200)
-      .header('Content-Type','application/json')
-      .send({value : result})
-    }
-  })
+    fastify.patch('/:id/status', async function (request, reply) {
+        const result = await updateOne(this.mongo,request.params.id,request.body)
+        
+        reply
+        .code(201)
+        .header('Content-Type', 'application/json; charset=utf-8')
+        .send(result.value)
+    })    
 }
