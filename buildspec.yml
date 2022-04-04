@@ -12,4 +12,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: client/build
+  base-directory: devops-01-P2-TeamA/build
