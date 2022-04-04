@@ -1,9 +1,9 @@
 'use strict'
-const { readAll } = require('../../model')
+const { readall } = require('../../model')
 
 module.exports = async function (fastify, opts) {
     fastify.get('/', async function (request, reply) {
-        const result = await readAll(this.mongo);
+        const result = await readall(this.mongo);
         
         if(result === []){
             reply
