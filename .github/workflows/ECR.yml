@@ -35,7 +35,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: p2-teama
-          IMAGE_TAG: latest   
+          IMAGE_TAG: latest 
 
           
         run: |
