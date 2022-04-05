@@ -14,7 +14,7 @@ module.exports = async function (fastify, opts) {
         else{
             reply
             .code(200)
-            .header('Content-type','application/json; charset=utf-8','Access-Control-Allow-Origin: *')
+            .header('Content-type','application/json; charset=utf-8')
             .send(result)
         }
 })
