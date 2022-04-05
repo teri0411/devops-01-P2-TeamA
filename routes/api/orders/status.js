@@ -1,5 +1,5 @@
 'use strict'
-const { updateOneorder } = require('../../model')
+const { updateOneorder } = require('../../../model')
 
 module.exports = async function (fastify, opts) {
     fastify.patch('/:id/status', async function (request, reply) {
@@ -10,7 +10,7 @@ module.exports = async function (fastify, opts) {
         reply
         .code(201)
         .header('Content-Type', 'application/json; charset=utf-8')
-        .send({"_id": result.value._id, "orderedMenu": result.value.orderedMenu, "deliveryInfo": result.value.deliveryInfo, "restaurant":result.value.restaurant})
+        .send({"_id": result.value._id, "orderedMenu": result.value.orderedMenu, "deliveryInfo": result.value.deliveryInfo, "restaurant":result.value.restaurant});
 
 
     })    

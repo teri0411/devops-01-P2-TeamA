@@ -1,5 +1,5 @@
 'use strict'
-const { readorder } = require('../../model')
+const { readorder } = require('../../../model')
 
 module.exports = async function (fastify, opts) {
     fastify.get('/', async function (request, reply) {
@@ -15,7 +15,7 @@ module.exports = async function (fastify, opts) {
             reply
             .code(200)
             .header('Content-type','application/json; charset=utf-8')
-            .send(result)
+            .send(result);
         }
 })
 }
