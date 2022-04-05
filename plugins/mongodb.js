@@ -1,13 +1,10 @@
 'use strict'
+
 const fp = require('fastify-plugin')
-const mongoURL = process.env.MONGODB_ENDPOINT
-console.log(mongoURL)
+
 module.exports = fp(async function (fastify, opts) {
-  if (process.env.NODE_ENV === 'test') {
-    return
-  }
   fastify.register(require('fastify-mongodb'), {
     forceClose: true,
-    url: mongoURL
+    url: "mongodb://root:example@rupinloadbalancer-f8b426b4d30b6f65.elb.ap-northeast-2.amazonaws.com/baedal?authSource=admin&ssl=false"
   })
 })
