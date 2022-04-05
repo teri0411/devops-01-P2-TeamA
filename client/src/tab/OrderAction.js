@@ -7,7 +7,7 @@ function OrderAction({ status, id }) {
 
   const handleStatusChange = (status) => {
     mutate('get/orders', async (orders) => {
-      const updatedOrder = await fetch(`${process.env.REACT_APP_ENDPOINT}/api/orders/${id}/status`, {
+      const updatedOrder = await fetch(`${REACT_APP_ENDPOINT}/api/orders/${id}/status`, {
         method: 'PATCH',
         body: JSON.stringify({
           status

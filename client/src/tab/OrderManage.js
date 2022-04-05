@@ -2,7 +2,7 @@ import OrderAction from './OrderAction';
 import { translateStatus } from './OrderStatus';
 import useSWR from 'swr'
 
-const fetcher = () => fetch(`${process.env.REACT_APP_ENDPOINT}/api/orders`).then(res => res.json())
+const fetcher = () => fetch(`${REACT_APP_ENDPOINT}/api/orders`).then(res => res.json())
 
 function OrderManage() {
   const { data: orders, error } = useSWR('get/orders', fetcher)
