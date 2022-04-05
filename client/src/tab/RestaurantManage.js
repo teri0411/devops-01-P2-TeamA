@@ -126,7 +126,7 @@ function RestaurantManage() {
               <div>메뉴</div>
               <div>가격(₩)</div>
             </li>
-            {restaurant.menu.map(item => <li className='list-item list-selectable' key={item._id} onClick={() => onSelectMenu(item)}>
+            {maue && menu.map(item => <li className='list-item list-selectable' key={item._id} onClick={() => onSelectMenu(item)}>
               <div>{item.name}</div>
               <div>{item.price}</div>
             </li>)}
