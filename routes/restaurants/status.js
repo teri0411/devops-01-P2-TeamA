@@ -9,7 +9,7 @@ module.exports = async function (fastify, opts) {
         
         reply
         .code(201)
-        .header('Content-Type', 'application/json; charset=utf-8')
+        .header('Content-Type', 'application/json; charset=utf-8','Access-Control-Allow-Origin: *')
         .send({"_id": result.value._id, "name":result.value.name, "menu":result.value.menu, "address":result.value.address, "rating":result.value.rating})
 
 
