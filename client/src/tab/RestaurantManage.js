@@ -14,7 +14,6 @@ function RestaurantManage() {
   if (error || restaurant.error) return <div>요청을 받아올 수 없습니다. 서버 문제같은데요?</div>
 
   const { menu } = restaurant
-  this.state = { item: [] };
 
   const onSelectMenu = (menu) => {
     if(menu === null) {
@@ -127,7 +126,7 @@ function RestaurantManage() {
               <div>메뉴</div>
               <div>가격(₩)</div>
             </li>
-            {this.state.menu.map(item => <li className='list-item list-selectable' key={item._id} onClick={() => onSelectMenu(item)}>
+            {restaurant.menu.map(item => <li className='list-item list-selectable' key={item._id} onClick={() => onSelectMenu(item)}>
               <div>{item.name}</div>
               <div>{item.price}</div>
             </li>)}
